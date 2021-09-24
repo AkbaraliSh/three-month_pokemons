@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.row{
+    width: 1140px;
+    margin: 0 auto;
+}
+.item{
+    width: 348px;
+    background-color: blueviolet;
+    position: relative;
+    text-align: center;
+}
+.newdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.number{
+    color: #fff;
+    margin-right: 15px;
+}
+.pokemon_name{
+    color:#fff;
+    display: inline-block;
+    cursor: pointer;
+}
+.Image{
+    vertical-align:baseline;
+}
+.typelist{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    color:#fff;
+    list-style-type: none;
+    margin-top: 40px;
+}
+.measurs{
+    display:inline-block;
+    align-items: center;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    color:rgb(187, 9, 39);
+    background-color: rgba(238, 238, 238,0.8);
+}
+.candy{
+    display: inline-block;
+    color: #fff;
+    margin: 0;
+}
+.candy_count{
+    color: #fff;
+    margin: 0;
+}
+.egg{
+    color: #fff;
+    margin: 0;
+}
+.avg_spawns{
+    margin: 0;
+}
+.spawn_chance{
+    margin: 0;
+}
