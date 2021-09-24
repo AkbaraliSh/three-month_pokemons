@@ -4,15 +4,24 @@ body{
     box-sizing: border-box;
     font-family: sans-serif;
 }
+p{
+    margin: 0;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
 .row{
     width: 1140px;
     margin: 0 auto;
 }
 .item{
     width: 348px;
-    background-color: blueviolet;
+    background-color: rgb(3, 98, 153);
     position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .newdiv{
     display: flex;
@@ -29,25 +38,22 @@ body{
     cursor: pointer;
 }
 .Image{
+    width: 120px;
     vertical-align:baseline;
+    margin-top: 10px;
+    text-align: center;
 }
 .typelist{
-    display: inline-block;
+    display: block;
     padding: 0;
     margin: 0;
-    margin-left: 10px;
     color:#fff;
-    list-style-type: none;
-    margin-top: 40px;
+    margin-left: 50px;
 }
 .measurs{
-    display:inline-block;
-    align-items: center;
-    position: absolute;
-    top: 45px;
-    right: 10px;
-    color:rgb(187, 9, 39);
-    background-color: rgba(238, 238, 238,0.8);
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 100px;
 }
 .candy{
     display: inline-block;
@@ -67,4 +73,11 @@ body{
 }
 .spawn_chance{
     margin: 0;
+}
+.newitemnum{
+    display: inline-block;
+    margin-right: 10px;
+}
+.newitemname{
+    display: inline-block;
 }

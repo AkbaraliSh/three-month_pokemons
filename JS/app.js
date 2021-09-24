@@ -24,7 +24,8 @@ for(pokemon of pokemons){
     var spawn_chance=document.createElement('p');
     var avg_spawns=document.createElement('p');
     var spawn_time=document.createElement('time');
-    var newmultipliersList=document.createElement('ul')
+    var newmultipliersList=document.createElement('ul');
+    
     
     
     
@@ -82,13 +83,14 @@ for(pokemon of pokemons){
     newCol.appendChild(newdiv);
     newdiv.appendChild(newnumber);
     newdiv.appendChild(newname);
-    newCol.appendChild(newImage);
-    
     newmeasurement.appendChild(resize);
     newmeasurement.appendChild(newmeasur1);
     newmeasurement.appendChild(weight);
     newmeasurement.appendChild(newmeasur2);
     newCol.appendChild(newmeasurement);
+    newCol.appendChild(newImage);
+    
+   
     
     
     newtypeList.appendChild(newcandy);
@@ -97,39 +99,58 @@ for(pokemon of pokemons){
     newtypeList.appendChild(spawn_chance);
     newtypeList.appendChild( avg_spawns);
     newtypeList.appendChild(spawn_time);
-    for(multip of pokemon.multipliers){
+    for(var multip of pokemon.multipliers){
         var newtypeli=document.createElement('li');
         newtypeli.textContent='multipliers: '+multip;
         newtypeList.appendChild(newtypeli);
     }
-    for(weaknes of pokemon.weaknesses){
+    for(var weaknes of pokemon.weaknesses){
         var newtypeli=document.createElement('li');
         newtypeli.textContent='weaknesses: '+weaknes;
         newtypeList.appendChild(newtypeli);
     }
     
     
-    for(evolution of pokemon.next_evolution){
-        var newevolution=next_evolution.name;
+    
+    
+    if (pokemon.next_evolution!=null) {
         
-        for(evolutnum of newevolution.num){
-            var newevolutli=document.createElement('li');
-            newtypeli.textContent='evolution_num: '+evolutnum;
+        for(evolution of pokemon.next_evolution){
+            var newList=document.createElement('ul');
+            var newitemnum=document.createElement('p');
+            var newitemname=document.createElement('p');
+            newitemnum.setAttribute('class','newitemnum')
+            newitemname.setAttribute('class','newitemname')
+            newitemnum.textContent='next_evolution: '+evolution.num;
+            newitemname.textContent=evolution.name;
+            var newli=document.createElement('li');
+            newli.appendChild(newitemnum);
+            newli.appendChild(newitemname);
+            newList.appendChild(newli)
+            newtypeList.appendChild(newList)
         }
+    }
+    if (pokemon.prev_evolution!=null) {
         
-        for(evolutname of newevolution.name){
-            var newevolutnameli=document.createElement('li');
-            newtypeli.textContent='evolution_name: '+evolutname;
+        for(evolution of pokemon.prev_evolution){
+            var newprevList=document.createElement('ul');
+            var newprevitemnum=document.createElement('p');
+            var newprevitemname=document.createElement('p');
+            newprevitemnum.setAttribute('class','newitemnum')
+            newprevitemname.setAttribute('class','newitemname')
+            newprevitemnum.textContent='prev_evolution: '+evolution.num;
+            newprevitemname.textContent=evolution.name;
+            var newprevli=document.createElement('li');
+            newprevli.appendChild(newprevitemnum);
+            newprevli.appendChild(newprevitemname);
+            newprevList.appendChild(newprevli)
+            newtypeList.appendChild(newprevList)
         }
-        newtypeli.appendChild(newevolutli);
-        newtypeList.appendChild(newtypeli);
     }
     
-    
+   
     
     newCol.appendChild(newtypeList);
-    
-    
     
     elRow.appendChild(newCol);
     
